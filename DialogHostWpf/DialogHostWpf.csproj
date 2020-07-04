@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFrameworks>net45;netcoreapp3.0</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyTitle>DialogHostWpf</AssemblyTitle>
+    <Copyright>Copyright © 2019</Copyright>
+    <Version>$(MDIXVersion)</Version>
+    <AssemblyVersion>$(MDIXVersion)</AssemblyVersion>
+    <NoWarn>CS1591;CS1574</NoWarn>
+    <ExtrasEnableWpfProjectSetup>true</ExtrasEnableWpfProjectSetup>
+    <Configurations>Debug;Release</Configurations>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\$(Configuration)\DialogHost.xml</DocumentationFile>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\paket-files\ControlzEx\ControlzEx\src\ControlzEx\PopupEx.cs">
+      <Paket>True</Paket>
+      <Link>ControlzEx/PopupEx.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Roboto\*.ttf" />
+    <Content Include="Resources\Roboto\*.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Resources\Roboto\Roboto-Black.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-BlackItalic.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-Bold.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-BoldItalic.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-Italic.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-Light.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-LightItalic.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-Medium.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-MediumItalic.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-Regular.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-Thin.ttf" />
+    <Content Remove="Resources\Roboto\Roboto-ThinItalic.ttf" />
+    <Content Remove="Resources\Roboto\RobotoCondensed-Bold.ttf" />
+    <Content Remove="Resources\Roboto\RobotoCondensed-BoldItalic.ttf" />
+    <Content Remove="Resources\Roboto\RobotoCondensed-Italic.ttf" />
+    <Content Remove="Resources\Roboto\RobotoCondensed-Light.ttf" />
+    <Content Remove="Resources\Roboto\RobotoCondensed-LightItalic.ttf" />
+    <Content Remove="Resources\Roboto\RobotoCondensed-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>
